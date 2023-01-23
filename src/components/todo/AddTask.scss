@@ -1,0 +1,22 @@
+.addTask{
+    background-color: blue;
+    height: 20vh;
+
+
+
+    &__form {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    
+    }
+
+    // &__label {
+    //     padding-top: 10px;
+    // }
+    // &__input {
+    //     margin-top: 10px;
+    // }
+}
