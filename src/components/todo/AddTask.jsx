@@ -5,9 +5,11 @@ const AddTask = () => {
       const [list,setList] = useState([])
       const [input, setInput]= useState("")
       const onClick = () => {
+       const id = list.length + 1;
             setList((prev) => [
                   ...prev,
                   {
+                        id: id,
                         task: input,
                         complete: false,
                       },
@@ -15,7 +17,17 @@ const AddTask = () => {
             setInput("")
       }
      
-      
+      console.log(list)
+      const onDelete = (id) => {
+            //filter- remove the item from list arr
+            const removeItem = list.filter((item)=> {
+                  return item.id !== id; 
+
+            });
+            setList(removeItem)
+
+      }
+      console.log(list)
       
 
 return <div className="addTask">
@@ -34,6 +46,8 @@ return <div className="addTask">
             {list.map((task) => {
                   return(<>
                   <p> {task.task} </p>
+                  <button> Edit</button>
+                  <button type="button" onClick={() => {onDelete(task.id)}}> Delete </button>
                   </>)
             })}
          </ul>
